@@ -9,5 +9,8 @@ Email confirmation after seat booking
 Tech Stack
 Nodejs,MongoDB, HTML and Heroku
 
-Admin Portal: http://localhost:8080/airline-ticketing/addFlights
-Customer Portal: http://localhost:8080/airline-ticketing/findFlights
+Heroku Deployment:
+Admin Portal: https://flight-ticketing-app.herokuapp.com/airline-ticketing/addFlights
+Customer Portal: https://flight-ticketing-app.herokuapp.com/airline-ticketing/findFlights
+
+
