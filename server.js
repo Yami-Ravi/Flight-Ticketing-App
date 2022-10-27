@@ -21,7 +21,7 @@ mongoose.connect(db, {
 //Database Conn via Mongoose - Ends
 
 //Server starts & To Application Router - Starts
-const port = process.env.PORT;
+const port = process.env.PORT||8080;
 const app = express();
 
 app.listen(port);
