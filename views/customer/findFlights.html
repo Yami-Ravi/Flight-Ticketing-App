@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+
+        .style-all {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Welcome Customer </h1>
+        <h2>Search Flights</h2>
+        <form action="/airline-ticketing/searchFlights" method="post">
+            <div>
+                <br />
+                <label>
+                    Origin
+                </label>
+                <input type="text" name="origin" placeholder="Origin" id="origin" required>
+                <br />
+            </div>
+            <div>
+                <br />
+                <label>
+                    Destination
+                </label>
+                <input type="text" name="destination" placeholder="Destination" id="destination" required>
+                <br />
+            </div>
+            <div>
+                <br />
+                <label>
+                    Date From
+                </label>
+                <input type="datetime-local" name="from" placeholder="From" id="from" required>
+                <br />
+            </div>
+            <div>
+                <br />
+                <label>
+                    Date To
+                </label>
+                <input type="datetime-local" name="to" placeholder="To" id="to" required>
+                <br />
+            </div>
+            <br />
+            <input type="submit" class="style-all" value="Search">
+        </form>
+    </div>
+</body>
+</html>

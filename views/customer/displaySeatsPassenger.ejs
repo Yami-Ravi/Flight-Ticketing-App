@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Saved Flights</title>
+ </head>
+ <body>
+   <h1>Seats for flight <%= flight_no %></h1>
+
+        <form action="/airline-ticketing/bookSeat" id="seatselect" method="post">
+            <input type="hidden" name="flight_no" id="flight_no" value=<%= flight_no %>>
+            <input type="hidden" name="seat" id="seat">
+            <input type="hidden" name="seatclass" id="seatclass">
+
+        </form>
+
+   <table>
+   <tr>
+      <th>Economy Seats</th><th>Business Seats</th>
+   </tr>
+
+      <% if(details.length>0)
+      for (var i = 0; i < details.length; i++) { %>
+    <tr>
+      <td>
+       <table>
+      <tr>
+      <th>Seat</th><th>Status</th><th></th>
+      </tr>
+    
+       <tr>
+       <td>E1</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_econ)).E1%></td>
+       <% if(JSON.parse(JSON.stringify(details[i].seats_econ)).E1=="free") { %>
+       <td>
+       <input type="button" onclick=BookSeat("E1","econ") value="Book">
+       </td>
+        <% } %>
+       </tr>
+	   <tr>
+       <td>E2</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_econ)).E2%></td>
+        <% if(JSON.parse(JSON.stringify(details[i].seats_econ)).E2=="free") { %>
+       <td>
+       <input type="button" onclick=BookSeat("E2","econ") value="Book">
+       </td>
+       <% } %>
+       </tr>
+	   <tr>
+       <td>E3</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_econ)).E3%></td>
+       <% if(JSON.parse(JSON.stringify(details[i].seats_econ)).E3=="free") { %>
+       <td><input type="button" onclick=BookSeat("E3","econ") value="Book"></td>
+       <% } %>
+       </tr>
+</table>
+      </td>
+      <td>
+       <table>
+      <tr>
+      <th>Seat</th><th>Status</th><th>Book</th>
+      </tr>
+    
+       <tr>
+       <td>B1</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_business)).B1%></td>
+       <% if(JSON.parse(JSON.stringify(details[i].seats_business)).B1=="free") { %>
+       <td><input type="button" onclick=BookSeat("B1","business") value="Book"></td>
+       <% } %>
+       </tr>
+	   <tr>
+       <td>B2</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_business)).B2%></td>
+        <% if(JSON.parse(JSON.stringify(details[i].seats_business)).B2=="free") { %>
+       <td><input type="button" onclick=BookSeat("B2","business") value="Book"></td>
+       <% } %>
+       </tr>
+	   <tr>
+       <td>B3</td>
+       <td><%= JSON.parse(JSON.stringify(details[i].seats_business)).B3%></td>
+       <% if(JSON.parse(JSON.stringify(details[i].seats_business)).B3=="free") { %>
+       <td><input type="button" onclick=BookSeat("B3","business") value="Book"></td>
+       <% } %>
+       </tr>
+</table>
+      </td>
+
+    </tr>    
+   <% } %>
+
+  
+</table>
+
+<script>
+function BookSeat(val,val2)
+{
+document.getElementById("seat").value=val;
+document.getElementById("seatclass").value=val2;
+
+var form = document.getElementById("seatselect");
+form.submit();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        .style-all {
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    <h2>Add flights</h2>
+    <form action="/airline-ticketing/saveFlight" method="post">
+        <div>
+            <br />
+            <label>Flight Number</label>
+            <input type="text" name="flight_no" placeholder="Flight Number" id="flight_no" required>
+            <br />
+        </div>
+        <div>
+            <br />
+            <label>Origin</label>
+            <input type="text" name="origin" placeholder="Origin" id="origin" required>
+            <br />
+        </div>
+        <div>
+            <br />
+            <label>Destination</label>
+            <input type="text" name="destination" placeholder="Destination" id="destination" required>
+            <br />
+        </div>
+        <div>
+            <br />
+            <label for="arrival">Arrival</label>
+            <input type="datetime-local" name="arrival" placeholder="Arrival" id="arrival" required>
+            <br />
+            </div>
+            <div>
+                <br/>
+                <label for="departure">Departure</label>
+                    <input type="datetime-local" name="departure" placeholder="Departure" id="departure" required>
+                <br />
+            </div>
+             <br />
+            <input type="submit" class="style-all" value="Add">
+</form>
+    <h2>Display flights</h2>
+    <form action="/airline-ticketing/displayAllFlights" method="post">
+        <button type="submit" class="style-all">Click to Display Flights</button>
+    </form>
+</body>
+</html>

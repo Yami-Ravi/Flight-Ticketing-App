@@ -1,0 +1,3 @@
+C:\Users\yamin\source\repos\Sample2\Sample2\obj\Debug\FlightTicketing.njsproj.AssemblyReference.cache
+C:\Users\yamin\source\repos\Sample2\Sample2\obj\Debug\FlightTicketing.njsproj.CoreCompileInputs.cache
+C:\Users\yamin\source\repos\Sample2\Sample2\bin\Microsoft.NodejsTools.WebRole.dll

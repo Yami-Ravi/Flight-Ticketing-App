@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Passenger</title>
+ </head>
+ <body>
+   <h1>Passenger details for <%= flight_no %> - <%= seat %></h1>
+   <table>
+
+   <% if(!passengerdata.length>0) { %>
+     <tr>
+     No data 
+     </tr> 
+     <% } %>
+     <% if(passengerdata.length>0) { %>
+    <tr>
+    <th>Passenger Name</th><th>Age</th><th>Email</th>
+    </tr> 
+     <% } %>
+   <% for (var i = 0; i < passengerdata.length; i++) { %>
+    <tr>
+      <td><%= passengerdata[i].passenger_name %></td>
+      <td><%= passengerdata[i].passenger_age%></td>
+      <td><%= passengerdata[i].passenger_email %></td>
+    </tr>    
+   <% } %>
+</table>
+</body>
+</html>

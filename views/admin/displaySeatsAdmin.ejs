@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Seats</title>
+ </head>
+ <body>
+   <h1>Seats for flight <%= flight_no %></h1>
+   <table>
+   <tr>
+      <th>Economy Seats(Seat No:Status)</th><th>Business Seats(Seat No:Status)</th>
+   </tr>
+
+      <% if(seatdata.length>0)
+      for (var i = 0; i < seatdata.length; i++) { %>
+    <tr>
+      <td><%= JSON.stringify(seatdata[i].seats_econ) %></td>
+      <td><%= JSON.stringify(seatdata[i].seats_business)%></td>
+
+    </tr>    
+   <% } %>
+
+  
+</table>
+     <h2>Get Passenger Data for <%= flight_no %></h2>
+      <form action="/airline-ticketing/showPassengerData" method="post">
+            <label>Seat Number</label>
+            <input type="text" name="seat" placeholder="Seat No" id="seat" required>
+            <input type="hidden" name="flight_no" id="flight_no" value=<%= flight_no %>>
+            <input type="submit" value="Search">
+
+      </form>
+</body>
+</html>

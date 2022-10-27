@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <title>Passenger Details</title>
+        <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        .style-all {
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Enter Passenger Details</h1>
+        <form action="/airline-ticketing/savePassenger" method="post">
+          <div>
+            <br />
+            <label for="passenger_name">
+                Name
+            </label>
+            <input type="text" name="passenger_name" placeholder="Name" id="passenger_name" required>
+            <br />
+            </div>
+            <div>
+            <br />
+            <label for="passenger_age">
+                Age
+            </label>
+            <input type="number" name="passenger_age" placeholder="Age" id="passenger_age" required>
+              <br />
+            </div>
+              <div>
+            <br />
+            <label for="passenger_email">
+                Email
+            </label>
+            <input type="text" name="passenger_email" placeholder="Email" id="passenger_email" required>
+              <br />
+            </div>
+            <input type="hidden" name="passenger_flight" value=<%= flight_no %> id="passenger_flight" required>
+            <input type="hidden" name="passenger_seat" value=<%= seat %> id="passenger_seat" required>
+
+            <br />
+             <input type="submit" class="style-all" value="Save & Book Ticket">
+        </form>
+    </div>
+</body>
+</html>

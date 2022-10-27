@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Flights</title>
+ </head>
+ <body>
+   <h1>All Flights</h1>
+   <table>
+   <tr>
+      <th>Flight Number</th><th>Origin</th><th>Destination</th><th>Arrival</th><th>Departure</th><th>Seats</th><th>Delete</th>
+   </tr>
+
+   <% for (var i = 0; i < flightdata.length; i++) { %>
+    <tr>
+      <td><%= flightdata[i].flight_no %></td>
+      <td><%= flightdata[i].origin %></td>
+      <td><%= flightdata[i].destination %></td>
+      <td><%= flightdata[i].arrival %></td>
+      <td><%= flightdata[i].departure %></td>
+
+      <td>
+         <form action="/airline-ticketing/FlightSeats" method="post">
+            <input type="hidden" name="flight_no" id="flight_no" value=<%= flightdata[i].flight_no %>>
+            <button type="submit">Seats</button>
+        </form>
+      </td>
+
+      
+      <td>
+         <form action="/airline-ticketing/deleteFlight" method="post">
+            <input type="hidden" name="flight_no" id="flight_no" value=<%= flightdata[i].flight_no %>>
+            <button type="submit">Delete Flight</button>
+        </form>
+      </td>
+
+
+    </tr>    
+   <% } %>
+</table>
+</body>
+</html>

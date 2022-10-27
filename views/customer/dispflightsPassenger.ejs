@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Flights</title>
+ </head>
+ <body>
+   <h1> Flights</h1>
+   <table>
+   <tr>
+      <th>Flight Number</th><th>Origin</th><th>Destination</th><th>Arrival</th><th>Departure</th><th>Seats</th>
+   </tr>
+
+   <% for (var i = 0; i < details.length; i++) { %>
+    <tr>
+      <td><%= details[i].flight_no %></td>
+      <td><%= details[i].origin %></td>
+      <td><%= details[i].destination %></td>
+      <td><%= details[i].arrival %></td>
+      <td><%= details[i].departure %></td>
+
+      <td>
+         <form action="/airline-ticketing/selectSeats" method="post">
+            <input type="hidden" name="flight_no" id="flight_no" value=<%= details[i].flight_no %>>
+
+            <button type="submit">Book Seats</button>
+        </form>
+      </td>
+
+
+    </tr>    
+   <% } %>
+</table>
+</body>
+</html>
